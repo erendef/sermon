@@ -1,6 +1,7 @@
 package com.erencol.sermon.View.Activities;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.databinding.DataBindingUtil;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -64,7 +65,7 @@ public class MainActivity extends AppCompatActivity implements Observer {
                 showInTheFutureDialog();
                 return true;
             case R.id.aboutid:
-                showAboutDialog();
+                showAboutActivity();
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
@@ -75,18 +76,9 @@ public class MainActivity extends AppCompatActivity implements Observer {
         observable.addObserver(this);
     }
 
-    public void showAboutDialog(){
-        new AlertDialog.Builder(this)
-                .setTitle(getResources().getString(R.string.about))
-                .setMessage(getResources().getString(R.string.about_text))
-                .setPositiveButton(getResources().getString(R.string.ok), new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int which) {
-                        // Continue with delete operation
-                    }
-                })
-                .setIcon(android.R.drawable.ic_dialog_info
-                )
-                .show();
+    public void showAboutActivity(){
+        Intent i = new Intent(MainActivity.this, AboutActivity.class);
+        startActivity(i);
     }
 
     public void showInTheFutureDialog(){

@@ -2,7 +2,7 @@
     <string name="app_name">Sermon</string>
     <string name="menu_item_add">Add</string>
     <string name="menu_item_settings">Settings</string>
-    <string name="sermons">Cuma Vaazları</string>
+    <string name="sermons">Cuma Hutbeleri</string>
     <string name="about">Sermon hakkında</string>
     <string name="inthefuture">Yakın zamanda...</string>
     <string name="ok">Tamam</string>
@@ -24,5 +24,21 @@ Aenean in arcu laoreet, gravida orci et, faucibus velit. Etiam finibus viverra t
     <string name="content_text_two">Nam ultrices, nunc sit amet vulputate vehicula, eros sem malesuada augue, quis cursus sem orci id magna. Vestibulum neque nibh, scelerisque eget urna nec, malesuada aliquam magna. Aenean varius justo tellus. Donec non leo ut turpis condimentum pharetra. Vestibulum lacinia lobortis volutpat. Suspendisse viverra augue a quam pellentesque fringilla. Fusce at purus nisl. Maecenas at justo nec sem efficitur finibus. Etiam sodales sit amet nulla non dapibus. Donec eget ante quam.</string>
     <string name="appbar_scrolling_view_behavior" translatable="false">android.support.design.widget.AppBarLayout$ScrollingViewBehavior</string>
     <string name="title_activity_reading">ReadingActivity</string>
+    <string name="title_activity_about">AboutActivity</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="other_apps">Geliştiricinin Diğer Uygulamaları</string>
+    <string name="app1_name">Bilmece</string>
+    <string name="app2_name">Oyun Kartları</string>
+    <string name="donate">Geliştiriciye katkıda bulunun.</string>
+    <string name="donate_explain">Uygulamanın reklamsız bir şekilde devam edebilmesi için geliştiriciye destek olun.</string>
+    <string name="iban">"Finansbank: TR32 0011 1000 0000 0061 3567 00 (Kopyala)"</string>
+    <string name="iban_copy_text">"TR32 0011 1000 0000 0061 3567 00"</string>
 
 </resources>
