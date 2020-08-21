@@ -9,5 +9,8 @@
     <item android:title="@string/about"
         android:id="@+id/aboutid"
         />
+    <item android:title="@string/special_days_menu_item"
+        android:id="@+id/specialdaysid"
+        />
 
 </menu>

@@ -67,6 +67,9 @@ public class MainActivity extends AppCompatActivity implements Observer {
             case R.id.aboutid:
                 showAboutActivity();
                 return true;
+            case R.id.specialdaysid:
+                goToSpecialDaysActivity();
+                return true;
             default:
                 return super.onOptionsItemSelected(item);
         }
@@ -102,5 +105,10 @@ public class MainActivity extends AppCompatActivity implements Observer {
             MainViewModel mainViewModel = (MainViewModel) observable;
             sermonAdapter.setSermonList(mainViewModel.getSermonList().getValue());
         }
+    }
+
+    public void goToSpecialDaysActivity(){
+        Intent i = new Intent(MainActivity.this,SpecialDays.class);
+        startActivity(i);
     }
 }
