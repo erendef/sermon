@@ -1,21 +1,13 @@
 package com.erencol.sermon.View.Activities;
 
-import android.arch.lifecycle.ViewModelProviders;
-import android.content.Intent;
+
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.CollapsingToolbarLayout;
-import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.ImageView;
-import android.widget.TextView;
-
-import com.bumptech.glide.GenericTransitionOptions;
-import com.bumptech.glide.Glide;
 import com.erencol.sermon.Model.Sermon;
 import com.erencol.sermon.R;
 import com.erencol.sermon.databinding.ActivityReadingBinding;
