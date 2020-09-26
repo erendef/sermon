@@ -7,5 +7,6 @@
     <color name="title_text_color">#85000000</color>
     <color name="short_text_color">#65000000</color>
     <color name="blue">#6495ed</color>
+    <color name="green">#11C72A</color>
     <color name="trans">#00000000</color>
 </resources>

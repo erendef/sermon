@@ -26,8 +26,16 @@ public class SermonViewHolder extends RecyclerView.ViewHolder {
         if (sermonCellBinding.getSermonCellViewModel() == null) {
             sermonCellBinding.setSermonCellViewModel(
                     new SermonCellViewModel(sermon));
+            if(sermon.isNew)
+                sermonCellBinding.newAlert.setVisibility(View.VISIBLE);
+            else
+                sermonCellBinding.newAlert.setVisibility(View.GONE);
         } else {
             sermonCellBinding.getSermonCellViewModel().setSermon(sermon);
+            if(sermon.isNew)
+                sermonCellBinding.newAlert.setVisibility(View.VISIBLE);
+            else
+                sermonCellBinding.newAlert.setVisibility(View.GONE);
         }
     }
 

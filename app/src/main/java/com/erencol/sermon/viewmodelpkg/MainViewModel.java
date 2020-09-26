@@ -41,8 +41,6 @@ public class MainViewModel extends Observable {
         return busy;
     }
 
-
-
     public void getSermons(){
         getBusy().setValue(0);
 

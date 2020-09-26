@@ -1,19 +1,28 @@
 package com.erencol.sermon.View.Activities
 
+import android.app.Activity
+import android.content.Intent
 import android.databinding.DataBindingUtil
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Handler
 import android.support.v7.widget.LinearLayoutCompat
 import android.support.v7.widget.LinearLayoutManager
 import android.view.MenuItem
-import android.widget.Toolbar
+import android.widget.Toast
 import com.erencol.sermon.Model.SpecialDay
 import com.erencol.sermon.R;
 import com.erencol.sermon.View.Adapters.SpecialDayAdapter
 import com.erencol.sermon.databinding.ActivitySpecialDaysBinding
 import com.erencol.sermon.viewmodelpkg.SpecialDaysViewModel
+import com.google.android.play.core.review.ReviewInfo
+import com.google.android.play.core.review.ReviewManager
+import com.google.android.play.core.review.ReviewManagerFactory
 
 class SpecialDays : AppCompatActivity() {
+    private val ACTIVITY_CALLBACK = 1
+    private var reviewInfo: ReviewInfo? = null
+    private lateinit var reviewManager: ReviewManager
     lateinit var specialDaysBinding: ActivitySpecialDaysBinding
     var specailDaysList = listOf(SpecialDay("Üç Ayların Başlangıcı","25 Şubat 2020"),
                                  SpecialDay("Regaib Kandili","27 Şubat 2020"),
@@ -59,7 +68,27 @@ class SpecialDays : AppCompatActivity() {
         specialDaysBinding.lifecycleOwner = this
         specialDaysBinding.specialDaysViewModel = specialDaysViewModel
         setToolBar()
-        setAdapter();
+        setAdapter()
+        reviewGooglePlayReviewInterface()
+    }
+
+    fun reviewGooglePlayReviewInterface() {
+
+        //Create the ReviewManager instance
+        reviewManager = ReviewManagerFactory.create(this)
+
+        //Request a ReviewInfo object ahead of time (Pre-cache)
+        val requestFlow = reviewManager.requestReviewFlow()
+        requestFlow.addOnCompleteListener { request ->
+            if (request.isSuccessful) {
+                //Received ReviewInfo object
+                reviewInfo = request.result
+            } else {
+                //Problem in receiving object
+                reviewInfo = null
+            }
+        }
+
     }
 
     fun setToolBar (){
@@ -75,7 +104,36 @@ class SpecialDays : AppCompatActivity() {
         adapter.setSpecialDays(specailDaysList)
 
     }
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        if (requestCode == ACTIVITY_CALLBACK && resultCode == Activity.RESULT_OK) {
+            Handler().postDelayed({
+                reviewInfo?.let {
+                    val flow = reviewManager.launchReviewFlow(this@SpecialDays, it)
+                    flow.addOnSuccessListener {
+                        //Showing toast is only for testing purpose, this shouldn't be implemented
+                        //in production app.
+                        Toast.makeText(
+                                this@SpecialDays,
+                                "Thanks for the feedback!",
+                                Toast.LENGTH_LONG
+                        ).show()
+                    }
+                    flow.addOnFailureListener {
+                        //Showing toast is only for testing purpose, this shouldn't be implemented
+                        //in production app.
+                        Toast.makeText(this@SpecialDays, "${it.message}", Toast.LENGTH_LONG).show()
+                    }
+                    flow.addOnCompleteListener {
+                        //Showing toast is only for testing purpose, this shouldn't be implemented
+                        //in production app.
+                        Toast.makeText(this@SpecialDays, "Completed!", Toast.LENGTH_LONG).show()
+                    }
+                }
+            }, 3000)
+        }
+        super.onActivityResult(requestCode, resultCode, data)
 
+    }
     override fun onOptionsItemSelected(item: MenuItem?): Boolean {
         if (item?.itemId == android.R.id.home){
             super.onBackPressed()

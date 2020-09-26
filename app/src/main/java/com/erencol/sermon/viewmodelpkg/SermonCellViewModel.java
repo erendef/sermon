@@ -38,6 +38,13 @@ public class SermonCellViewModel extends BaseObservable {
 
     public String getDate(){return sermon.getDate(); }
 
+    public int getNew(){
+       if(sermon.getNew())
+           return View.VISIBLE;
+       else
+           return View.GONE;
+    }
+
     public void onItemClick(View view){
         Bundle bundle = new Bundle();
         bundle.putSerializable("sermon", sermon);

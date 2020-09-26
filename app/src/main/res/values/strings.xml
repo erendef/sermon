@@ -6,6 +6,7 @@
     <string name="about">Uygulama hakkında</string>
     <string name="inthefuture">Yakın zamanda...</string>
     <string name="ok">Tamam</string>
+    <string name="new_sermon">Yeni!</string>
     <string name="inthefuture_text">Uygulamaya hutbe eklendiğinde bildirim gelmesi planlanmaktadır.</string>
 
     <string name="SCROLL_FLAG_ENTER_ALWAYS">ENTER_ALWAYS</string>

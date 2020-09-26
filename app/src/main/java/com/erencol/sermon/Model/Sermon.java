@@ -11,6 +11,7 @@ public class Sermon implements Serializable {
     @SerializedName("image") public String imageUrl;
     @SerializedName("date") public String date;
     @SerializedName("text") public String text;
+    @SerializedName("new") public Boolean isNew = false;
 
     public Sermon(int id, String title, String shortText, String imageUrl, String date, String text) {
         this.id = id;
@@ -70,5 +71,13 @@ public class Sermon implements Serializable {
 
     public void setText(String text) {
         this.text = text;
+    }
+
+    public Boolean getNew() {
+        return isNew;
+    }
+
+    public void setNew(Boolean aNew) {
+        isNew = aNew;
     }
 }
