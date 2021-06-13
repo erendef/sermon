@@ -24,25 +24,7 @@ class SpecialDays : AppCompatActivity() {
     private var reviewInfo: ReviewInfo? = null
     private lateinit var reviewManager: ReviewManager
     lateinit var specialDaysBinding: ActivitySpecialDaysBinding
-    var specailDaysList = listOf(SpecialDay("Üç Ayların Başlangıcı","25 Şubat 2020"),
-                                 SpecialDay("Regaib Kandili","27 Şubat 2020"),
-                                 SpecialDay("Miraç Kandili","21 Mart 2020"),
-                                 SpecialDay("Berat Kandili","7 Nisan 2020"),
-                                 SpecialDay("Ramazan Başlangıcı","24 Nisan 2020"),
-                                 SpecialDay("Kadir Gecesi","19 Mayıs 2020"),
-                                 SpecialDay("Arefe","23 Mayıs 2020"),
-                                 SpecialDay("Ramazan Bayramı 1. Gün","24 Mayıs 2020"),
-                                 SpecialDay("Ramazan Bayramı 2. Gün","25 Mayıs 2020"),
-                                 SpecialDay("Ramazan Bayramı 3. Gün","26 Mayıs 2020"),
-                                 SpecialDay("Arefe","30 Temmuz 2020"),
-                                 SpecialDay("Kurban Bayramı 1. Gün","31 Temmuz 2020"),
-                                 SpecialDay("Kurban Bayramı 2. Gün","1 Ağustos 2020"),
-                                 SpecialDay("Kurban Bayramı 3. Gün","2 Ağustos 2020"),
-                                 SpecialDay("Kurban Bayramı 4. Gün","3 Ağustos 2020"),
-                                 SpecialDay("Hicri Yılbaşı","20 Ağustos 2020"),
-                                 SpecialDay("Aşure Günü","29 Ağustos 2020"),
-                                 SpecialDay("Mevlid Kandili","29 Ekim 2020"),
-                                 SpecialDay("Üç Ayların Başlangıcı","13 Şubat 2021"),
+    var specailDaysList = listOf(SpecialDay("Üç Ayların Başlangıcı","13 Şubat 2021"),
                                  SpecialDay("Regaib Kandili","18 Şubat 2021"),
                                  SpecialDay("Miraç Kandili","10 Mart 2021"),
                                  SpecialDay("Berat Kandili","27 Mart 2021"),
@@ -59,6 +41,7 @@ class SpecialDays : AppCompatActivity() {
                                  SpecialDay("Kurban Bayramı 4. Gün","23 Temmuz 2021"),
                                  SpecialDay("Hicri Yılbaşı","9 Ağustos 2021"),
                                  SpecialDay("Aşure Günü","18 Ağustos 2021"),
+                                 SpecialDay("Mevlid Kandili","17 Ekim 2021"),
                                  SpecialDay("Mevlid Kandili","17 Ekim 2021"),
     )
     var specialDaysViewModel: SpecialDaysViewModel = SpecialDaysViewModel()
@@ -134,7 +117,7 @@ class SpecialDays : AppCompatActivity() {
         super.onActivityResult(requestCode, resultCode, data)
 
     }
-    override fun onOptionsItemSelected(item: MenuItem?): Boolean {
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
         if (item?.itemId == android.R.id.home){
             super.onBackPressed()
             return true
