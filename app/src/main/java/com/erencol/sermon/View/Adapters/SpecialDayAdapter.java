@@ -1,17 +1,15 @@
 package com.erencol.sermon.View.Adapters;
 
-import android.databinding.DataBindingUtil;
-import android.support.annotation.NonNull;
-import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 
-import com.erencol.sermon.Model.Sermon;
+import androidx.annotation.NonNull;
+import androidx.databinding.DataBindingUtil;
+import androidx.recyclerview.widget.RecyclerView;
+
 import com.erencol.sermon.Model.SpecialDay;
 import com.erencol.sermon.R;
-import com.erencol.sermon.View.Adapters.ViewHolders.SermonViewHolder;
 import com.erencol.sermon.View.Adapters.ViewHolders.SpecialDayViewHolder;
-import com.erencol.sermon.databinding.SermonCellBinding;
 import com.erencol.sermon.databinding.SpecialDaysCellBinding;
 
 import java.util.Collections;
@@ -48,8 +46,6 @@ public class SpecialDayAdapter extends RecyclerView.Adapter<SpecialDayViewHolder
         this.specialDays = sermonList;
         notifyDataSetChanged();
     }
-
-
 
 
 }

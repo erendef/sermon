@@ -3,148 +3,161 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".View.Activities.AboutActivity">
-    <android.support.design.widget.CoordinatorLayout
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/coordinator">
-        <android.support.design.widget.AppBarLayout
+
+        <com.google.android.material.appbar.AppBarLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:theme="@style/AppTheme.AppBarOverlay">
 
-            <android.support.v7.widget.Toolbar
+            <androidx.appcompat.widget.Toolbar
                 android:id="@+id/toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
                 android:background="?attr/colorPrimary"
                 app:popupTheme="@style/AppTheme.PopupOverlay" />
 
-        </android.support.design.widget.AppBarLayout>
-        <LinearLayout
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <!-- Değişiklik burada başlıyor -->
+        <androidx.core.widget.NestedScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical"
-            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+            app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="34dp"
-                android:layout_marginLeft="34dp"
-                android:layout_marginBottom="12dp"
-                android:textSize="32sp"
-                android:text="@string/sermons"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/about_text"
-                android:layout_marginLeft="34dp"
-                android:layout_marginRight="34dp"
-                android:layout_marginBottom="24dp" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="34dp"
-                android:textSize="24sp"
-                android:layout_marginBottom="12dp"
-                android:text="@string/other_apps"></TextView>
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="64dp"
-                android:layout_marginLeft="34dp"
-                android:layout_marginRight="34dp"
-                android:onClick="bilmeceClick">
-                <ImageView
-                    android:layout_width="64dp"
-                    android:layout_height="64dp"
-                    android:id="@+id/image1"
-                    android:src="@drawable/bilmece" />
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_toRightOf="@id/image1"
-                    android:orientation="vertical"
-                    android:gravity="center_vertical">
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="12dp"
-                        android:textSize="18sp"
-                        android:textStyle="bold"
-                        android:text="@string/app1_name"/>
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:scaleType="fitStart"
-                        android:layout_gravity="left"
-                        android:layout_marginLeft="6dp"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/play_image"/>
-                </LinearLayout>
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="64dp"
-                android:layout_marginTop="12dp"
-                android:layout_marginLeft="34dp"
-                android:layout_marginRight="34dp"
-                android:layout_marginBottom="34dp"
-                android:onClick="gameCardClick">
-                <ImageView
-                    android:layout_width="64dp"
-                    android:layout_height="64dp"
-                    android:id="@+id/image2"
-                    android:src="@drawable/game_cards" />
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_toRightOf="@id/image2"
-                    android:orientation="vertical"
-                    android:gravity="center_vertical">
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="12dp"
-                        android:textSize="18sp"
-                        android:textStyle="bold"
-                        android:text="@string/app2_name"/>
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:scaleType="fitStart"
-                        android:layout_gravity="left"
-                        android:layout_marginLeft="6dp"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/play_image"/>
-                </LinearLayout>
-            </RelativeLayout>
             <LinearLayout
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_marginLeft="34dp">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="18sp"
-                    android:text="@string/donate"/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginRight="34dp"
-                    android:layout_marginTop="8dp"
-                    android:text="@string/donate_explain"/>
+                android:orientation="vertical">
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="34dp"
-                    android:layout_marginRight="34dp"
-                    android:text="@string/iban"
-                    android:gravity="center"
-                    android:onClick="copy"></TextView>
-            </LinearLayout>
+                    android:layout_marginStart="34dp"
+                    android:layout_marginBottom="12dp"
+                    android:textSize="32sp"
+                    android:text="@string/sermons"/>
 
-        </LinearLayout>
-    </android.support.design.widget.CoordinatorLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/about_text"
+                    android:layout_marginLeft="34dp"
+                    android:layout_marginRight="34dp"
+                    android:layout_marginBottom="24dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="34dp"
+                    android:textSize="24sp"
+                    android:layout_marginBottom="12dp"
+                    android:text="@string/other_apps" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="64dp"
+                    android:layout_marginLeft="34dp"
+                    android:layout_marginRight="34dp"
+                    android:onClick="bilmeceClick">
+
+                    <ImageView
+                        android:layout_width="64dp"
+                        android:layout_height="64dp"
+                        android:id="@+id/image1"
+                        android:src="@drawable/bilmece" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_toEndOf="@id/image1"
+                        android:orientation="vertical"
+                        android:gravity="center_vertical">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="12dp"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            android:text="@string/app1_name"/>
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:contentDescription="Bilmece App"
+                            android:scaleType="fitStart"
+                            android:layout_gravity="left"
+                            android:layout_marginStart="6dp"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/play_image"/>
+                    </LinearLayout>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="64dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginLeft="34dp"
+                    android:layout_marginRight="34dp"
+                    android:layout_marginBottom="34dp"
+                    android:onClick="gameCardClick">
+                    <ImageView
+                        android:layout_width="64dp"
+                        android:layout_height="64dp"
+                        android:id="@+id/image2"
+                        android:src="@drawable/game_cards" />
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_toRightOf="@id/image2"
+                        android:orientation="vertical"
+                        android:gravity="center_vertical">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="12dp"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            android:text="@string/app2_name"/>
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:scaleType="fitStart"
+                            android:layout_gravity="left"
+                            android:layout_marginLeft="6dp"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/play_image"/>
+                    </LinearLayout>
+                </RelativeLayout>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginLeft="34dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="18sp"
+                        android:text="@string/donate"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="34dp"
+                        android:layout_marginTop="8dp"
+                        android:text="@string/donate_explain"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="34dp"
+                        android:layout_marginRight="34dp"
+                        android:text="@string/iban"
+                        android:gravity="center"
+                        android:onClick="copy"></TextView>
+                </LinearLayout>
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+        <!-- Değişiklik burada bitiyor -->
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
 </layout>

@@ -1,13 +1,14 @@
 package com.erencol.sermon.viewmodelpkg;
 
-import android.arch.lifecycle.ViewModel;
 import android.content.Intent;
 import android.view.View;
+
+import androidx.lifecycle.ViewModel;
 import com.erencol.sermon.Model.Sermon;
 import com.erencol.sermon.R;
 
 public class ReadingViewModel extends ViewModel {
-    private Sermon sermon;
+    private final Sermon sermon;
 
     public ReadingViewModel(Sermon sermon){
         this.sermon = sermon;

@@ -1,11 +1,11 @@
 package com.erencol.sermon.viewmodelpkg;
 
 import android.content.Intent;
-import android.databinding.BaseObservable;
-import android.databinding.BindingAdapter;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
+import androidx.databinding.BaseObservable;
+import androidx.databinding.BindingAdapter;
 
 import com.bumptech.glide.GenericTransitionOptions;
 import com.bumptech.glide.Glide;

@@ -2,30 +2,21 @@ package com.erencol.sermon.View.Activities;
 
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.databinding.DataBindingUtil;
-import android.support.annotation.Nullable;
-import android.support.v7.app.AlertDialog;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-
-import com.erencol.sermon.Model.Sermon;
-import com.erencol.sermon.R;
-import com.erencol.sermon.SermonApplication;
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.databinding.DataBindingUtil;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 import com.erencol.sermon.View.Adapters.SermonAdapter;
 import com.erencol.sermon.databinding.ActivityMainBinding;
 import com.erencol.sermon.viewmodelpkg.MainViewModel;
-
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Observable;
 import java.util.Observer;
-
+import com.erencol.sermon.R;
 
 public class MainActivity extends AppCompatActivity implements Observer {
     private MainViewModel mainViewModel;
@@ -40,7 +31,7 @@ public class MainActivity extends AppCompatActivity implements Observer {
         binding = DataBindingUtil.setContentView(this,R.layout.activity_main);
         mainViewModel = new MainViewModel();
         binding.setMainViewModel(mainViewModel);
-        binding.setLifecycleOwner(this); // ViewModel'i bağlar.
+        binding.setLifecycleOwner(this);
         setSupportActionBar(binding.toolbar);
         setupListPeopleView(binding.sermonsRecyclerview);
         setupObserver(mainViewModel);
@@ -63,18 +54,18 @@ public class MainActivity extends AppCompatActivity implements Observer {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle item selection
-        switch (item.getItemId()) {
-            case R.id.inthefutureid:
-                showInTheFutureDialog();
-                return true;
-            case R.id.aboutid:
-                showAboutActivity();
-                return true;
-            case R.id.specialdaysid:
-                goToSpecialDaysActivity();
-                return true;
-            default:
-                return super.onOptionsItemSelected(item);
+        int id = item.getItemId();
+        if (id == R.id.inthefutureid) {
+            showInTheFutureDialog();
+            return true;
+        } else if (id == R.id.aboutid) {
+            showAboutActivity();
+            return true;
+        } else if (id == R.id.specialdaysid) {
+            goToSpecialDaysActivity();
+            return true;
+        } else {
+            return super.onOptionsItemSelected(item);
         }
     }
 

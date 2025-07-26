@@ -7,13 +7,13 @@
             name="specialDaysCellViewModel"
             type="com.erencol.sermon.viewmodelpkg.SpecialDaysCellViewModel" />
     </data>
-    <android.support.constraint.ConstraintLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_margin="8dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/item_sermon">
         
-        <android.support.v7.widget.CardView
+        <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             app:cardCornerRadius="2dp"
@@ -27,7 +27,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:id="@+id/sermon_cell_title"
-                    android:layout_toRightOf="@+id/sermon_cell_image"
+                    android:layout_toEndOf="@+id/sermon_cell_image"
                     android:layout_marginLeft="12dp"
                     android:layout_marginRight="8dp"
                     android:layout_marginTop="8dp"
@@ -55,7 +55,7 @@
 
     
             </RelativeLayout>
-        </android.support.v7.widget.CardView>
+        </androidx.cardview.widget.CardView>
     
-    </android.support.constraint.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

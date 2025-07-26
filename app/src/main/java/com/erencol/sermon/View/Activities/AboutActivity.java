@@ -3,21 +3,21 @@ package com.erencol.sermon.View.Activities;
 import android.content.ClipData;
 import android.content.ClipboardManager;
 import android.content.Intent;
-import android.databinding.DataBindingUtil;
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.design.widget.CollapsingToolbarLayout;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.databinding.DataBindingUtil;
+
 import com.erencol.sermon.R;
 import com.erencol.sermon.databinding.ActivityAboutBinding;
+
+import java.util.Objects;
 
 public class AboutActivity extends AppCompatActivity {
     ActivityAboutBinding activityAboutBinding;
@@ -31,7 +31,7 @@ public class AboutActivity extends AppCompatActivity {
     public void setToolbar(@NonNull String title) {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
         toolbar.setTitle(title);
         this.setTitle(title);
     }

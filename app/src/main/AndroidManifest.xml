@@ -12,16 +12,22 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".View.Activities.SpecialDays"></activity>
+        <activity
+            android:name=".View.Activities.SpecialDays"
+            android:exported="true" />
         <activity
             android:name=".View.Activities.AboutActivity"
             android:label="@string/title_activity_about"
+            android:exported="true"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".View.Activities.ReadingActivity"
             android:label="@string/title_activity_reading"
+            android:exported="true"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".View.Activities.MainActivity">
+        <activity
+            android:name=".View.Activities.MainActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

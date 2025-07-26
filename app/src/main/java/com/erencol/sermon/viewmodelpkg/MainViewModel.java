@@ -1,18 +1,17 @@
 package com.erencol.sermon.viewmodelpkg;
 
-import android.arch.lifecycle.LiveData;
-import android.arch.lifecycle.MutableLiveData;
+import androidx.lifecycle.LiveData;
+import androidx.lifecycle.MutableLiveData;
+
 import com.erencol.sermon.Data.Service.Host;
 import com.erencol.sermon.Data.Service.ISermons;
 import com.erencol.sermon.Data.Service.SermonClient;
 import com.erencol.sermon.Model.Sermon;
-
 import java.util.List;
 import java.util.Observable;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.CompositeDisposable;
 import io.reactivex.disposables.Disposable;
-import io.reactivex.functions.Consumer;
 import io.reactivex.schedulers.Schedulers;
 
 public class MainViewModel extends Observable {
@@ -48,18 +47,12 @@ public class MainViewModel extends Observable {
         Disposable disposable = sermonsService.getSermons(Host.getSermons)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(new Consumer<List<Sermon>>() {
-                    @Override
-                    public void accept(List<Sermon> sermons) throws Exception {
-                        getSermonList().setValue(sermons);
-                        setChanged();
-                        notifyObservers();
-                        getBusy().setValue(8);
-                    }},new Consumer<Throwable>() {
-                    @Override public void accept(Throwable throwable) {
-                        throwable.printStackTrace();
-                    }
-                });
+                .subscribe(sermons -> {
+                    getSermonList().setValue(sermons);
+                    setChanged();
+                    notifyObservers();
+                    getBusy().setValue(8);
+                }, Throwable::printStackTrace);
         compositeDisposable.add(disposable);
     }
 

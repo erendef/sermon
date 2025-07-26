@@ -2,14 +2,14 @@ package com.erencol.sermon.View.Activities
 
 import android.app.Activity
 import android.content.Intent
-import android.databinding.DataBindingUtil
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
-import android.support.v7.widget.LinearLayoutCompat
-import android.support.v7.widget.LinearLayoutManager
 import android.view.MenuItem
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.Toolbar
+import androidx.databinding.DataBindingUtil
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.erencol.sermon.Model.SpecialDay
 import com.erencol.sermon.R;
 import com.erencol.sermon.View.Adapters.SpecialDayAdapter
@@ -24,25 +24,27 @@ class SpecialDays : AppCompatActivity() {
     private var reviewInfo: ReviewInfo? = null
     private lateinit var reviewManager: ReviewManager
     lateinit var specialDaysBinding: ActivitySpecialDaysBinding
-    var specailDaysList = listOf(SpecialDay("Üç Ayların Başlangıcı","13 Şubat 2021"),
-                                 SpecialDay("Regaib Kandili","18 Şubat 2021"),
-                                 SpecialDay("Miraç Kandili","10 Mart 2021"),
-                                 SpecialDay("Berat Kandili","27 Mart 2021"),
-                                 SpecialDay("Ramazan Başlangıcı","13 Nisan 2021"),
-                                 SpecialDay("Kadir Gecesi","8 Mayıs 2021"),
-                                 SpecialDay("Arefe","12 Mayıs 2021"),
-                                 SpecialDay("Ramazan Bayramı 1. Gün","13 Mayıs 2021"),
-                                 SpecialDay("Ramazan Bayramı 2. Gün","14 Mayıs 2021"),
-                                 SpecialDay("Ramazan Bayramı 3. Gün","15 Mayıs 2021"),
-                                 SpecialDay("Arefe","19 Temmuz 2021"),
-                                 SpecialDay("Kurban Bayramı 1. Gün","20 Temmuz 2021"),
-                                 SpecialDay("Kurban Bayramı 2. Gün","21 Temmuz 2021"),
-                                 SpecialDay("Kurban Bayramı 3. Gün","22 Temmuz 2021"),
-                                 SpecialDay("Kurban Bayramı 4. Gün","23 Temmuz 2021"),
-                                 SpecialDay("Hicri Yılbaşı","9 Ağustos 2021"),
-                                 SpecialDay("Aşure Günü","18 Ağustos 2021"),
-                                 SpecialDay("Mevlid Kandili","17 Ekim 2021"),
-                                 SpecialDay("Mevlid Kandili","17 Ekim 2021"),
+    val specialDaysList = listOf(
+        SpecialDay("Üç Ayların Başlangıcı", "1 Ocak 2025"),
+        SpecialDay("Regaib Kandili", "2 Ocak 2025"),
+        SpecialDay("Miraç Kandili", "26 Ocak 2025"),
+        SpecialDay("Berat Kandili", "13 Şubat 2025"),
+        SpecialDay("Ramazan Başlangıcı", "1 Mart 2025"),
+        SpecialDay("Kadir Gecesi", "26 Mart 2025"),
+        SpecialDay("Arefe", "29 Mart 2025"),
+        SpecialDay("Ramazan Bayramı 1. Gün", "30 Mart 2025"),
+        SpecialDay("Ramazan Bayramı 2. Gün", "31 Mart 2025"),
+        SpecialDay("Ramazan Bayramı 3. Gün", "1 Nisan 2025"),
+        SpecialDay("Arefe", "5 Haziran 2025"),
+        SpecialDay("Kurban Bayramı 1. Gün", "6 Haziran 2025"),
+        SpecialDay("Kurban Bayramı 2. Gün", "7 Haziran 2025"),
+        SpecialDay("Kurban Bayramı 3. Gün", "8 Haziran 2025"),
+        SpecialDay("Kurban Bayramı 4. Gün", "9 Haziran 2025"),
+        SpecialDay("Hicri Yılbaşı", "26 Haziran 2025"),
+        SpecialDay("Aşure Günü", "5 Temmuz 2025"),
+        SpecialDay("Mevlid Kandili", "3 Eylül 2025"),
+        SpecialDay("Üç Ayların Başlangıcı", "21 Aralık 2025"),
+        SpecialDay("Regaib Kandili", "25 Aralık 2025"),
     )
     var specialDaysViewModel: SpecialDaysViewModel = SpecialDaysViewModel()
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -75,16 +77,17 @@ class SpecialDays : AppCompatActivity() {
     }
 
     fun setToolBar (){
-        setSupportActionBar(specialDaysBinding.toolbar)
-        supportActionBar?.setTitle(resources.getString(R.string.special_days_title))
+        setSupportActionBar(specialDaysBinding.toolbar as Toolbar?)
+        supportActionBar?.title = resources.getString(R.string.special_days_title)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
     }
 
     fun setAdapter(){
         val adapter= SpecialDayAdapter()
         specialDaysBinding.specialdaysrecyclerview.adapter = adapter
-        specialDaysBinding.specialdaysrecyclerview.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL ,false)
-        adapter.setSpecialDays(specailDaysList)
+        specialDaysBinding.specialdaysrecyclerview.layoutManager =
+            LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
+        adapter.setSpecialDays(specialDaysList)
 
     }
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {

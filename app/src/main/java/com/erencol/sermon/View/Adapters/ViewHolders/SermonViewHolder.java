@@ -1,12 +1,12 @@
 package com.erencol.sermon.View.Adapters.ViewHolders;
 
-import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.recyclerview.widget.RecyclerView;
+
 import com.erencol.sermon.Model.Sermon;
-import com.erencol.sermon.R;
 import com.erencol.sermon.databinding.SermonCellBinding;
 import com.erencol.sermon.viewmodelpkg.SermonCellViewModel;
 
