@@ -9,4 +9,5 @@
     <color name="blue">#6495ed</color>
     <color name="green">#11C72A</color>
     <color name="trans">#00000000</color>
+    <color name="white">#ffffffff</color>
 </resources>

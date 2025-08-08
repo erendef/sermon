@@ -24,8 +24,8 @@ public class ReadingActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         activityReadingBinding = DataBindingUtil.setContentView(this, R.layout.activity_reading);
-        setToolbar("Dark");
         getExtrasFromIntent();
+        setToolbar(sermon.title);
     }
 
 
@@ -35,16 +35,17 @@ public class ReadingActivity extends AppCompatActivity {
         Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
         CollapsingToolbarLayout collapsingToolbar = findViewById(R.id.collapsingToolbarLayout);
         collapsingToolbar.setTitle(title);
-        collapsingToolbar.setExpandedTitleColor(getResources().getColor(R.color.trans));
-        collapsingToolbar.setCollapsedTitleTextColor(getResources().getColor(R.color.trans));
+        collapsingToolbar.setExpandedTitleColor(getResources().getColor(R.color.white));
+        collapsingToolbar.setCollapsedTitleTextColor(getResources().getColor(R.color.white));
     }
+
+
 
     public void getExtrasFromIntent(){
         sermon = new Sermon();
         sermon = (Sermon) Objects.requireNonNull(getIntent().getExtras()).getSerializable("sermon");
         ReadingViewModel readingViewModel = new ReadingViewModel(sermon);
         activityReadingBinding.setSermonDetailViewModel(readingViewModel);
-
     }
 
     @Override
