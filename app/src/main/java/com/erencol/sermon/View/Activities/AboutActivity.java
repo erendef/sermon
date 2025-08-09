@@ -36,13 +36,10 @@ public class AboutActivity extends AppCompatActivity {
         this.setTitle(title);
     }
 
-    public void bilmeceClick(View view){
-        startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=com.erencol.bilmece")));
+    public void drawingClick(View view){
+        startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=com.mobizoe.drawing")));
     }
 
-    public void gameCardClick(View view){
-        startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=com.erencol.gamecard")));
-    }
     public void copy(View view){
         ClipboardManager clipboard = (ClipboardManager) getSystemService(CLIPBOARD_SERVICE);
         ClipData clip = ClipData.newPlainText("Hutbeler Iban", getResources().getString(R.string.iban_copy_text));

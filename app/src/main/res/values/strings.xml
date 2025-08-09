@@ -35,7 +35,7 @@ Aenean in arcu laoreet, gravida orci et, faucibus velit. Etiam finibus viverra t
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
     <string name="other_apps">Geliştiricinin Diğer Uygulamaları</string>
-    <string name="app1_name">Bilmece</string>
+    <string name="app1_name">Çizim Uygulaması</string>
     <string name="app2_name">Oyun Kartları</string>
     <string name="donate">Geliştiriciye katkıda bulunun.</string>
     <string name="donate_explain">Uygulamanın reklamsız bir şekilde devam edebilmesi için geliştiriciye destek olun.</string>
@@ -45,5 +45,6 @@ Aenean in arcu laoreet, gravida orci et, faucibus velit. Etiam finibus viverra t
     <string name="special_days_menu_item">Dini Günler</string>
     <string name="share_button">share_button</string>
     <string name="sermontitle">sermontitle</string>
+    <string name="izim_uygulamas">Çizim Uygulaması</string>
 
 </resources>

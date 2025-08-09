@@ -93,10 +93,9 @@ public class MainActivity extends AppCompatActivity implements Observer {
     }
 
     @Override public void update(Observable observable, Object data) {
-        Log.d("update","upadte");
-        if (observable instanceof MainViewModel) {
+        if (observable instanceof MainViewModel mainViewModel) {
             SermonAdapter sermonAdapter = (SermonAdapter) binding.sermonsRecyclerview.getAdapter();
-            MainViewModel mainViewModel = (MainViewModel) observable;
+            assert sermonAdapter != null;
             sermonAdapter.setSermonList(mainViewModel.getSermonList().getValue());
         }
     }
