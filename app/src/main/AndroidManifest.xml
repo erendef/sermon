@@ -13,17 +13,21 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".View.Activities.SettingsActivity"
+            android:exported="true"
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity
             android:name=".View.Activities.SpecialDays"
             android:exported="true" />
         <activity
             android:name=".View.Activities.AboutActivity"
-            android:label="@string/title_activity_about"
             android:exported="true"
+            android:label="@string/title_activity_about"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".View.Activities.ReadingActivity"
-            android:label="@string/title_activity_reading"
             android:exported="true"
+            android:label="@string/title_activity_reading"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".View.Activities.MainActivity"

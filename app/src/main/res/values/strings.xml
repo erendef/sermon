@@ -43,8 +43,10 @@ Aenean in arcu laoreet, gravida orci et, faucibus velit. Etiam finibus viverra t
     <string name="iban_copy_text">"TR32 0011 1000 0000 0061 3567 00"</string>
     <string name="special_days_title">Dini Günler ve Bayramlar</string>
     <string name="special_days_menu_item">Dini Günler</string>
+    <string name="settings_menu_item">Ayarlar</string>
     <string name="share_button">share_button</string>
     <string name="sermontitle">sermontitle</string>
     <string name="izim_uygulamas">Çizim Uygulaması</string>
+    <string name="font_size">Yazı tipi boyutu</string>
 
 </resources>
