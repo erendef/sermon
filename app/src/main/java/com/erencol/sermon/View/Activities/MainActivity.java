@@ -43,6 +43,9 @@ public class MainActivity extends AppCompatActivity implements Observer {
         return true;
     }
 
+    public void setupObserver(Observable observable) {
+        observable.addObserver(this);
+    }
     private void setupListPeopleView(RecyclerView listPeople) {
         SermonAdapter adapter = new SermonAdapter();
         listPeople.setAdapter(adapter);
@@ -67,8 +70,14 @@ public class MainActivity extends AppCompatActivity implements Observer {
         }
     }
 
-    public void setupObserver(Observable observable) {
-        observable.addObserver(this);
+    public void goToSpecialDaysActivity(){
+        Intent i = new Intent(MainActivity.this,SpecialDays.class);
+        startActivity(i);
+    }
+
+    public void goToSettingsActivity(){
+        Intent i = new Intent(MainActivity.this,SettingsActivity.class);
+        startActivity(i);
     }
 
     public void showAboutActivity(){
@@ -84,13 +93,5 @@ public class MainActivity extends AppCompatActivity implements Observer {
         }
     }
 
-    public void goToSpecialDaysActivity(){
-        Intent i = new Intent(MainActivity.this,SpecialDays.class);
-        startActivity(i);
-    }
 
-    public void goToSettingsActivity(){
-        Intent i = new Intent(MainActivity.this,SettingsActivity.class);
-        startActivity(i);
-    }
 }

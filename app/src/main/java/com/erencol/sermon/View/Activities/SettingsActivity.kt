@@ -20,7 +20,7 @@ class SettingsActivity : AppCompatActivity() {
     lateinit var seekText: TextView
     lateinit var sharedPreferencesManager: SharedPreferencesManager
 
-    var seekBarValue: Int = 8
+    var seekBarValue: Int = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,6 +29,7 @@ class SettingsActivity : AppCompatActivity() {
         seekText = settingsBinding.seekbarProgressText
         setToolBar()
         sharedPreferencesManager = SharedPreferencesManager(applicationContext)
+        seekBarValue = sharedPreferencesManager.DEFAULT_FONT_SIZE
         seekText.text = getFontsize().toString()
         seekBar.progress =  Integer.parseInt(seekText.text.toString())
         seekBar.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
@@ -47,7 +48,7 @@ class SettingsActivity : AppCompatActivity() {
 
     fun getFontsize(): Int {
         return if(sharedPreferencesManager.getFontSize(0) == 0) {
-            8
+            sharedPreferencesManager.DEFAULT_FONT_SIZE
         } else {
             sharedPreferencesManager.getFontSize(0)
         }

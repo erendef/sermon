@@ -6,6 +6,7 @@ import androidx.core.content.edit
 
 class SharedPreferencesManager(context: Context) {
     val FONT_KEY = "font_key"
+    val DEFAULT_FONT_SIZE = 4
     companion object {
         private const val PREFS_NAME = "SermonPrefs"
         private var instance: SharedPreferencesManager? = null
