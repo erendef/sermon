@@ -6,7 +6,7 @@ android {
     namespace 'com.erencol.sermon'
     defaultConfig {
         applicationId "com.erencol.sermon"
-        minSdkVersion 23
+        minSdkVersion 26
         targetSdk 34
         versionCode 10
         versionName "1.0.8"

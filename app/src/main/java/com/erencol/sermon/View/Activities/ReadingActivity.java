@@ -1,11 +1,9 @@
 package com.erencol.sermon.View.Activities;
 
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -16,7 +14,6 @@ import com.erencol.sermon.R;
 import com.erencol.sermon.databinding.ActivityReadingBinding;
 import com.erencol.sermon.viewmodelpkg.ReadingViewModel;
 import com.google.android.material.appbar.CollapsingToolbarLayout;
-
 import java.util.Objects;
 
 public class ReadingActivity extends AppCompatActivity {
