@@ -3,7 +3,6 @@ package com.erencol.sermon.View.Activities;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import androidx.appcompat.app.AlertDialog;
@@ -44,6 +43,9 @@ public class MainActivity extends AppCompatActivity implements Observer {
         return true;
     }
 
+    public void setupObserver(Observable observable) {
+        observable.addObserver(this);
+    }
     private void setupListPeopleView(RecyclerView listPeople) {
         SermonAdapter adapter = new SermonAdapter();
         listPeople.setAdapter(adapter);
@@ -53,43 +55,34 @@ public class MainActivity extends AppCompatActivity implements Observer {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle item selection
         int id = item.getItemId();
-        if (id == R.id.inthefutureid) {
-            showInTheFutureDialog();
-            return true;
-        } else if (id == R.id.aboutid) {
+        if (id == R.id.aboutid) {
             showAboutActivity();
             return true;
         } else if (id == R.id.specialdaysid) {
             goToSpecialDaysActivity();
+            return true;
+        } else if (id == R.id.settingsid) {
+            goToSettingsActivity();
             return true;
         } else {
             return super.onOptionsItemSelected(item);
         }
     }
 
-    public void setupObserver(Observable observable) {
-        observable.addObserver(this);
+    public void goToSpecialDaysActivity(){
+        Intent i = new Intent(MainActivity.this,SpecialDays.class);
+        startActivity(i);
+    }
+
+    public void goToSettingsActivity(){
+        Intent i = new Intent(MainActivity.this,SettingsActivity.class);
+        startActivity(i);
     }
 
     public void showAboutActivity(){
         Intent i = new Intent(MainActivity.this, AboutActivity.class);
         startActivity(i);
-    }
-
-    public void showInTheFutureDialog(){
-        new AlertDialog.Builder(this)
-                .setTitle(getResources().getString(R.string.inthefuture))
-                .setMessage(getResources().getString(R.string.inthefuture_text))
-                .setPositiveButton(getResources().getString(R.string.ok), new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int which) {
-                        // Continue with delete operation
-                    }
-                })
-                .setIcon(android.R.drawable.ic_dialog_info
-                )
-                .show();
     }
 
     @Override public void update(Observable observable, Object data) {
@@ -100,8 +93,5 @@ public class MainActivity extends AppCompatActivity implements Observer {
         }
     }
 
-    public void goToSpecialDaysActivity(){
-        Intent i = new Intent(MainActivity.this,SpecialDays.class);
-        startActivity(i);
-    }
+
 }
